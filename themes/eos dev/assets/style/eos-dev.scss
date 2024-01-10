@@ -1,0 +1,229 @@
+/*-------------------------------------------------------------------
+Colors
+-------------------------------------------------------------------*/
+$colorBlack: #111111;
+$colorGrafitti: #212121;
+$colorGray: #eee;
+$colorDarkGray: #2F2F2F;
+$colorMediumGray: #353535;
+$colorLightGray: #EEEEEE;
+$colorRed: #A30A0A;
+$colorLightRed: #BB0000;
+
+/*-------------------------------------------------------------------
+Typography
+-------------------------------------------------------------------*/
+$textSizecontent: 16px;
+$textSizeH1: 40px;
+$textSizeH2: 32px;
+
+$textFontContent: 'Roboto',
+sans-serif;
+
+/*-------------------------------------------------------------------
+Transition
+-------------------------------------------------------------------*/
+%transition {
+    transition: all 300ms;
+}
+
+/*-------------------------------------------------------------------
+Flex
+-------------------------------------------------------------------*/
+
+.l-flex {
+    display: flex;
+}
+
+.l-flex--center {
+    justify-content: center;
+    align-items: center;
+}
+
+.l-flex--stretch {
+    align-items: stretch;
+}
+
+.l-flex--wrap {
+    flex-wrap: wrap;
+}
+
+.l-flex--negative {
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+.l-flex--vertical {
+    flex-direction: column;
+}
+
+.l-flex__left {
+    margin-right: auto;
+}
+
+.l-flex__right {
+    margin-left: auto;
+}
+
+%flexPadding {
+    padding: 12px;
+}
+
+%flexColLessPadding {
+    padding: 0 12px 12px 0;
+}
+
+.l__col-2-4 {
+    @extend %flexPadding;
+    width: 20%;
+}
+
+.l__col-3 {
+    @extend %flexPadding;
+    width: 25%;
+}
+
+.l__col-4 {
+    @extend %flexPadding;
+    width: 33.33%;
+}
+
+.l__col-6 {
+    @extend %flexPadding;
+    width: 50%;
+}
+
+.l__col-8 {
+    @extend %flexPadding;
+    width: 66.66%;
+}
+
+.l__col-9 {
+    @extend %flexPadding;
+    width: 75%;
+}
+
+.l__col-12 {
+    @extend %flexPadding;
+    width: 100%;
+}
+
+.l__col--less-padding {
+    @extend %flexColLessPadding;
+}
+
+/*-------------------------------------------------------------------
+General
+-------------------------------------------------------------------*/
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    background: $colorGrafitti;
+    color: white;
+    font-size: $textSizecontent;
+    font-family: $textFontContent;
+}
+
+:focus {
+    outline: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.c__center {
+    text-align: center;
+    text-align-last: center;
+}
+
+a {
+    @extend %transition;
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.c__container {
+    margin: 0 auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    max-width: 1240px;
+}
+
+/*-------------------------------------------------------------------
+Buttons
+-------------------------------------------------------------------*/
+.c__button {
+    position: relative;
+    padding: 10px 15px;
+    background: $colorRed;
+    text-transform: uppercase;
+    overflow: hidden;
+
+    &:after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-color: white;
+        border-width: 5px;
+        border-style: solid;
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+    }
+}
+
+/*-------------------------------------------------------------------
+Header
+-------------------------------------------------------------------*/
+.c-header {
+    position: fixed;
+    width: 100%;
+    padding: 20px;
+    background: $colorBlack;
+    box-shadow: rgba(0, 0, 0, .35) 0 0 4px 0;
+}
+
+.c-nav {
+    .c-nav__link {
+        position: relative;
+        padding: 12px 20px;
+
+        &:after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            width: 80%;
+            height: 2px;
+            background: $colorRed;
+            transform: translateX(-50%) scale(0);
+            transform-origin: center;
+            @extend %transition;
+        }
+
+        &:hover,
+        &:focus {
+            &:after {
+                transform: translateX(-50%) scale(1);
+            }
+        }
+    }
+}

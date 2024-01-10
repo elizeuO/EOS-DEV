@@ -1,0 +1,191 @@
+/*-------------------------------------------------------------------
+Colors
+-------------------------------------------------------------------*/
+/*-------------------------------------------------------------------
+Typography
+-------------------------------------------------------------------*/
+/*-------------------------------------------------------------------
+Transition
+-------------------------------------------------------------------*/
+.c-nav .c-nav__link:after, a {
+  transition: all 300ms;
+}
+
+/*-------------------------------------------------------------------
+Flex
+-------------------------------------------------------------------*/
+.l-flex {
+  display: flex;
+}
+
+.l-flex--center {
+  justify-content: center;
+  align-items: center;
+}
+
+.l-flex--stretch {
+  align-items: stretch;
+}
+
+.l-flex--wrap {
+  flex-wrap: wrap;
+}
+
+.l-flex--negative {
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.l-flex--vertical {
+  flex-direction: column;
+}
+
+.l-flex__left {
+  margin-right: auto;
+}
+
+.l-flex__right {
+  margin-left: auto;
+}
+
+.l__col-12, .l__col-9, .l__col-8, .l__col-6, .l__col-4, .l__col-3, .l__col-2-4 {
+  padding: 12px;
+}
+
+.l__col--less-padding {
+  padding: 0 12px 12px 0;
+}
+
+.l__col-2-4 {
+  width: 20%;
+}
+
+.l__col-3 {
+  width: 25%;
+}
+
+.l__col-4 {
+  width: 33.33%;
+}
+
+.l__col-6 {
+  width: 50%;
+}
+
+.l__col-8 {
+  width: 66.66%;
+}
+
+.l__col-9 {
+  width: 75%;
+}
+
+.l__col-12 {
+  width: 100%;
+}
+
+/*-------------------------------------------------------------------
+General
+-------------------------------------------------------------------*/
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  background: #212121;
+  color: white;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+}
+
+:focus {
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.c__center {
+  text-align: center;
+  -moz-text-align-last: center;
+       text-align-last: center;
+}
+
+a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.c__container {
+  margin: 0 auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  max-width: 1240px;
+}
+
+/*-------------------------------------------------------------------
+Buttons
+-------------------------------------------------------------------*/
+.c__button {
+  position: relative;
+  padding: 10px 15px;
+  background: #A30A0A;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+.c__button:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-color: white;
+  border-width: 5px;
+  border-style: solid;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+
+/*-------------------------------------------------------------------
+Header
+-------------------------------------------------------------------*/
+.c-header {
+  position: fixed;
+  width: 100%;
+  padding: 20px;
+  background: #111111;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 0 4px 0;
+}
+
+.c-nav .c-nav__link {
+  position: relative;
+  padding: 12px 20px;
+}
+.c-nav .c-nav__link:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  width: 80%;
+  height: 2px;
+  background: #A30A0A;
+  transform: translateX(-50%) scale(0);
+  transform-origin: center;
+}
+.c-nav .c-nav__link:hover:after, .c-nav .c-nav__link:focus:after {
+  transform: translateX(-50%) scale(1);
+}
