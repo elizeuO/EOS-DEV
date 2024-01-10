@@ -144,6 +144,46 @@ Buttons
   text-transform: uppercase;
   overflow: hidden;
 }
+.c__button:hover, .c__button:focus {
+  -webkit-animation: button-highlight 1s infinite;
+          animation: button-highlight 1s infinite;
+}
+@-webkit-keyframes button-highlight {
+  from {
+    background: #A30A0A;
+  }
+  50% {
+    background: #BB0000;
+  }
+  to {
+    background: #A30A0A;
+  }
+}
+@keyframes button-highlight {
+  from {
+    background: #A30A0A;
+  }
+  50% {
+    background: #BB0000;
+  }
+  to {
+    background: #A30A0A;
+  }
+}
+.c__button:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-color: white;
+  border-width: 5px;
+  border-style: solid;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
 .c__button:after {
   content: "";
   display: inline-block;

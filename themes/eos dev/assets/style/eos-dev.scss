@@ -173,6 +173,35 @@ Buttons
     text-transform: uppercase;
     overflow: hidden;
 
+    &:hover, &:focus{
+        animation: button-highlight 1s infinite;
+    }
+
+    @keyframes button-highlight {
+        from{
+            background: $colorRed;
+        }50%{
+            background: $colorLightRed;
+        }to{
+            background: $colorRed;  
+        }
+    }
+
+     &:after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-color: white;
+        border-width: 5px;
+        border-style: solid;
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+    }
+
     &:after {
         content: '';
         display: inline-block;
