@@ -21,7 +21,7 @@
         <div class="c__container">
             <div class="l-flex l-flex--center l-flex--wrap">
 
-                <a href="" class="c-header__logo l-flex__left">
+                <a href="" class="c__logo l-flex__left">
                     <img src="<?= getThemeImage('logo.webp')?>" alt="Eos dev">
                 </a>
 
