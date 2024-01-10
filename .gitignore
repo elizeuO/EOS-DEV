@@ -1,0 +1,13 @@
+debug.log
+cache
+uploads
+plugins
+upgrade
+uploads.zip
+uploads.rar
+uploads.tar.gz
+.idea
+.idea/workspace.xml
+.DS_Store
+.htaccess
+languages
