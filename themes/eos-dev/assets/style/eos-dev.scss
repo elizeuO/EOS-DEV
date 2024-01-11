@@ -400,6 +400,11 @@ Sections
     &.c-section--grafitti {
         background: $colorGrafitti;
     }
+
+    &.c-section--less-padding {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
 }
 
 //Section About
@@ -422,9 +427,33 @@ Sections
         max-width: 80%;
     }
 
-    .c__button{
-        &:not(:first-of-type){
+    .c__button {
+        &:not(:first-of-type) {
             margin-left: 5px;
         }
     }
+}
+
+//Section Counter
+.c-counter {
+    padding-right: 20px;
+    border-right: 1px solid $colorMediumGray;
+
+    .c-counter__img {
+        margin-right: 10px;
+    }
+
+    .c-counter__number {
+        color: $colorLightRed;
+        font-size: 35px;
+        font-weight: 600;
+
+        &:before {
+            content: '+';
+        }
+    }
+}
+
+.l-flex article:last-child .c-counter {
+    border-right: none;
 }
