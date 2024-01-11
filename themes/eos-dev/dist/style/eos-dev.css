@@ -4,6 +4,14 @@ Colors
 /*-------------------------------------------------------------------
 Typography
 -------------------------------------------------------------------*/
+h1 {
+  font-size: 40px;
+}
+
+.c__highlight-text {
+  color: #BB0000;
+}
+
 /*-------------------------------------------------------------------
 Transition
 -------------------------------------------------------------------*/
@@ -212,6 +220,7 @@ Header
   padding: 20px;
   background: #111111;
   box-shadow: rgba(0, 0, 0, 0.35) 0 0 4px 0;
+  z-index: 10;
 }
 
 .c-nav .c-nav__link {
@@ -232,4 +241,65 @@ Header
 }
 .c-nav .c-nav__link:hover:after, .c-nav .c-nav__link:focus:after {
   transform: translateX(-50%) scale(1);
+}
+
+/*-------------------------------------------------------------------
+Sections
+-------------------------------------------------------------------*/
+.c-section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.c-section.c-section--hero {
+  position: relative;
+  margin-top: 60px;
+  height: calc(100vh - 90px);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url("/wp-content/themes/eos-dev/dist/img/hero-banner.webp") center center repeat;
+  background-size: cover;
+}
+.c-section.c-section--hero h1 {
+  font-weight: 400;
+}
+.c-section.c-section--hero .c__container {
+  height: 100%;
+}
+.c-section.c-section--hero .c-section--hero__content {
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.c-section.c-section--hero .c-section--hero__typed-text {
+  display: block;
+  color: #BB0000;
+  font-weight: 600;
+}
+.c-section.c-section--hero .c-section--hero__mouse-icon {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  -webkit-animation: mouse 1.2s infinite;
+          animation: mouse 1.2s infinite;
+  transform: translateX(-50%);
+}
+@-webkit-keyframes mouse {
+  from {
+    bottom: 35px;
+    opacity: 0.4;
+  }
+  to {
+    bottom: 20px;
+    opacity: 0.8;
+  }
+}
+@keyframes mouse {
+  from {
+    bottom: 35px;
+    opacity: 0.4;
+  }
+  to {
+    bottom: 20px;
+    opacity: 0.8;
+  }
 }
