@@ -12,7 +12,7 @@
                     mundo digital
                 </b>
 
-                <span class="c-section--hero__typed-text">
+                <span class="c-section--hero__typed-text js-hero-typing">
                     Desenvolvo soluções
                 </span>
             </h1>

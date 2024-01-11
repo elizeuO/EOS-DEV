@@ -29,3 +29,23 @@ window.onscroll = function () {
   }
 };
 
+document.addEventListener('DOMContentLoaded', ()=>{
+
+//Run hero typing animation
+  new TypeIt(".js-hero-typing", {
+    speed: 50,
+    waitUntilVisible: true,
+  })
+    .type(" inovadoras", { delay: 300 })
+    .delete(10)
+    .type(" criativas", { delay: 1000 })
+    .delete(30)
+    .type("E com um design atraente", { delay: 1000 })
+    .delete(25)
+    .type("Tenha mais sucesso na internet", { delay: 1000 })
+    .delete(30)
+    .type("_Vamos começar!", { delay: 500 })
+    .go();
+
+});
+

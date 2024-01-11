@@ -20,11 +20,15 @@ $textSizeH2: 32px;
 $textFontContent: 'Roboto',
 sans-serif;
 
-h1{
+h1 {
     font-size: $textSizeH1;
 }
 
-.c__highlight-text{
+b {
+    font-weight: 600;
+}
+
+.c__highlight-text {
     color: $colorLightRed;
 }
 
@@ -255,6 +259,7 @@ Header
     .c-nav__link {
         position: relative;
         padding: 12px 20px;
+        opacity: .8;
 
         &:after {
             content: '';
@@ -272,6 +277,8 @@ Header
 
         &:hover,
         &:focus {
+            opacity: 1;
+
             &:after {
                 transform: translateX(-50%) scale(1);
             }
@@ -289,19 +296,19 @@ Sections
     &.c-section--hero {
         position: relative;
         margin-top: 60px;
-        height: calc(100vh - 90px);
-        background: linear-gradient(0deg, rgba(0,0,0,.6 ), rgba(0,0,0,.4 )), url('/wp-content/themes/eos-dev/dist/img/hero-banner.webp') center center repeat;
+        height: calc(100vh - 60px);
+        background: linear-gradient(0deg, rgba(0, 0, 0, .3), rgba(0, 0, 0, .8)), url('/wp-content/themes/eos-dev/dist/img/hero-banner.webp') center center repeat;
         background-size: cover;
 
-        h1{
-            font-weight: 400;
+        h1 {
+            font-weight: 300;
         }
 
-        .c__container{
+        .c__container {
             height: 100%;
         }
 
-        .c-section--hero__content{
+        .c-section--hero__content {
             position: absolute;
             width: 80%;
             top: 50%;
@@ -309,10 +316,15 @@ Sections
             transform: translate(-50%, -50%);
         }
 
-        .c-section--hero__typed-text{
+        .c-section--hero__typed-text {
             display: block;
             color: $colorLightRed;
             font-weight: 600;
+
+            .ti-cursor {
+                color: rgba(255, 255, 255, .4) !important;
+                font-weight: 300 !important;
+            }
         }
 
         .c-section--hero__mouse-icon {
@@ -322,15 +334,17 @@ Sections
             animation: mouse 1.2s infinite;
             transform: translateX(-50%);
         }
-    
+
         @keyframes mouse {
             from {
                 bottom: 35px;
                 opacity: .4;
-            }to {
+            }
+
+            to {
                 bottom: 20px;
                 opacity: .8;
             }
+        }
     }
-}
 }

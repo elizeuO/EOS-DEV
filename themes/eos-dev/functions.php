@@ -20,6 +20,9 @@ function registerScripts()
     wp_register_script('jquery', $path . 'jquery.min.js', array(), '3.7.1', true);
     wp_enqueue_script('jquery');
 
+    wp_register_script('typeit', $path . 'typeit.min.js', array(), '8.7.1', true);
+    wp_enqueue_script('typeit');
+
     wp_register_script('eos-dev', $path . 'eos-dev.js', array(), '1.0.0', true);
     wp_enqueue_script('eos-dev');
 }

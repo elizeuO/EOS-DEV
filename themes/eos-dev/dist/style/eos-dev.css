@@ -8,6 +8,10 @@ h1 {
   font-size: 40px;
 }
 
+b {
+  font-weight: 600;
+}
+
 .c__highlight-text {
   color: #BB0000;
 }
@@ -226,6 +230,7 @@ Header
 .c-nav .c-nav__link {
   position: relative;
   padding: 12px 20px;
+  opacity: 0.8;
 }
 .c-nav .c-nav__link:after {
   content: "";
@@ -238,6 +243,9 @@ Header
   background: #A30A0A;
   transform: translateX(-50%) scale(0);
   transform-origin: center;
+}
+.c-nav .c-nav__link:hover, .c-nav .c-nav__link:focus {
+  opacity: 1;
 }
 .c-nav .c-nav__link:hover:after, .c-nav .c-nav__link:focus:after {
   transform: translateX(-50%) scale(1);
@@ -253,12 +261,12 @@ Sections
 .c-section.c-section--hero {
   position: relative;
   margin-top: 60px;
-  height: calc(100vh - 90px);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url("/wp-content/themes/eos-dev/dist/img/hero-banner.webp") center center repeat;
+  height: calc(100vh - 60px);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)), url("/wp-content/themes/eos-dev/dist/img/hero-banner.webp") center center repeat;
   background-size: cover;
 }
 .c-section.c-section--hero h1 {
-  font-weight: 400;
+  font-weight: 300;
 }
 .c-section.c-section--hero .c__container {
   height: 100%;
@@ -274,6 +282,10 @@ Sections
   display: block;
   color: #BB0000;
   font-weight: 600;
+}
+.c-section.c-section--hero .c-section--hero__typed-text .ti-cursor {
+  color: rgba(255, 255, 255, 0.4) !important;
+  font-weight: 300 !important;
 }
 .c-section.c-section--hero .c-section--hero__mouse-icon {
   position: absolute;
