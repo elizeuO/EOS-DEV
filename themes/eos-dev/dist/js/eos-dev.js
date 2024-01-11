@@ -1,7 +1,9 @@
 window.onscroll = function () {
+  toggleActiveLink();
+
   function toggleActiveLink() {
     // Get all the links with an ID that starts with 'section'
-    const links = document.querySelectorAll('header nav a[href^="#"]');
+    const links = document.querySelectorAll('header nav a[href^="/#"]');
     if (null === links) {
       return;
     }
@@ -15,6 +17,9 @@ window.onscroll = function () {
 
       // Get the section that the link points to
       const section = document.querySelector(link.hash);
+      if (null === section) {
+        return;
+      }
 
       // If the section is in the viewport, add an 'active' class to the link
       if (
@@ -29,9 +34,8 @@ window.onscroll = function () {
   }
 };
 
-document.addEventListener('DOMContentLoaded', ()=>{
-
-//Run hero typing animation
+document.addEventListener("DOMContentLoaded", () => {
+  //Run hero typing animation
   new TypeIt(".js-hero-typing", {
     speed: 50,
     waitUntilVisible: true,
@@ -46,6 +50,4 @@ document.addEventListener('DOMContentLoaded', ()=>{
     .delete(30)
     .type("_Vamos começar!", { delay: 500 })
     .go();
-
 });
-

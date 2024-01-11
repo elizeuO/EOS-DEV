@@ -277,7 +277,7 @@ Header
         }
 
         &:hover,
-        &:focus {
+        &:focus, &.active {
             opacity: 1;
 
             &:after {
@@ -293,6 +293,7 @@ Sections
 .c-section {
     padding-top: 60px;
     padding-bottom: 60px;
+    background: $colorBlack;
 
     &.c-section--hero {
         position: relative;
@@ -348,5 +349,9 @@ Sections
                 opacity: .8;
             }
         }
+    }
+
+    &.c-section--grafitti{
+        background: $colorGrafitti;
     }
 }

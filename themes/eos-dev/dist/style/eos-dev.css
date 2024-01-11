@@ -244,10 +244,10 @@ Header
   transform: translateX(-50%) scale(0);
   transform-origin: center;
 }
-.c-nav .c-nav__link:hover, .c-nav .c-nav__link:focus {
+.c-nav .c-nav__link:hover, .c-nav .c-nav__link:focus, .c-nav .c-nav__link.active {
   opacity: 1;
 }
-.c-nav .c-nav__link:hover:after, .c-nav .c-nav__link:focus:after {
+.c-nav .c-nav__link:hover:after, .c-nav .c-nav__link:focus:after, .c-nav .c-nav__link.active:after {
   transform: translateX(-50%) scale(1);
 }
 
@@ -257,6 +257,7 @@ Sections
 .c-section {
   padding-top: 60px;
   padding-bottom: 60px;
+  background: #111111;
 }
 .c-section.c-section--hero {
   position: relative;
@@ -315,4 +316,7 @@ Sections
     bottom: 20px;
     opacity: 0.8;
   }
+}
+.c-section.c-section--grafitti {
+  background: #212121;
 }
