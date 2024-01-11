@@ -1,4 +1,5 @@
 window.onscroll = function () {
+
   toggleActiveLink();
 
   function toggleActiveLink() {
@@ -7,9 +8,6 @@ window.onscroll = function () {
     if (null === links) {
       return;
     }
-
-    // Get the current scroll position of the window
-    const currentScrollPos = window.scrollY + 250;
 
     // Loop through all the links
     for (let i = 0; i < links.length; i++) {
@@ -22,20 +20,28 @@ window.onscroll = function () {
       }
 
       // If the section is in the viewport, add an 'active' class to the link
-      if (
-        section.offsetTop <= currentScrollPos &&
-        section.offsetTop + section.offsetHeight > currentScrollPos
-      ) {
+      if (isInViewport(section)) {
         link.classList.add("active");
       } else {
         link.classList.remove("active");
       }
     }
   }
+
+  //Check if is viewport
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-
   //Run hero typing animation
   new TypeIt(".js-hero-typing", {
     speed: 50,
@@ -52,5 +58,3 @@ document.addEventListener("DOMContentLoaded", () => {
     .type("_Vamos começar!", { delay: 500 })
     .go();
 });
-
-
