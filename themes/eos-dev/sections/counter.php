@@ -10,7 +10,7 @@
                             class="c-counter__img">
 
                         <div class="c-counter__info">
-                            <div class="c-counter__number js-counter">
+                            <div class="c-counter__number js-counter" count="5">
                                 5
                             </div>
                             Anos de experiência
@@ -29,7 +29,7 @@
                             class="c-counter__img">
 
                         <div class="c-counter__info">
-                            <div class="c-counter__number js-counter">
+                            <div class="c-counter__number js-counter" count="50">
                                 50
                             </div>
                             Projetos desenvovidos
@@ -49,7 +49,7 @@
                             class="c-counter__img">
 
                         <div class="c-counter__info">
-                            <div class="c-counter__number js-counter">
+                            <div class="c-counter__number js-counter" count="20">
                                 20
                             </div>
                             Clientes satisfeitos
@@ -66,7 +66,7 @@
                         <img src="<?= getThemeImage('counter-icon-coffee.webp') ?>" alt="Café" class="c-counter__img">
 
                         <div class="c-counter__info">
-                            <div class="c-counter__number js-counter">
+                            <div class="c-counter__number js-counter" count="1000">
                                 1000
                             </div>
                             Litros de café ingeridos

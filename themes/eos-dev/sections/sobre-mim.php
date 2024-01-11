@@ -1,4 +1,4 @@
-<section class="c-section c-section--grafitti c-section" id="sobre-mim">
+<section class="c-section c-section--grafitti js-activate-counters" id="sobre-mim">
     <div class="c__container">
         <div class="l-flex l-flex--center l-flex--wrap l-flex--negative">
 

@@ -1,6 +1,6 @@
 window.onscroll = function () {
-
   toggleActiveLink();
+  runCounters();
 
   function toggleActiveLink() {
     // Get all the links with an ID that starts with 'section'
@@ -34,11 +34,45 @@ window.onscroll = function () {
     return (
       rect.top >= 0 &&
       rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   }
 
+  //Run counters if is the viewport
+  function runCounters() {
+    const section = document.querySelector(".js-activate-counters");
+
+    if (null === section) {
+      return;
+    }
+
+    if (isInViewport(section)) {
+      const counters = document.querySelectorAll(".js-counter");
+      if (0 === counters.length) {
+        return;
+      }
+
+      counters.forEach((counter) => {
+        let count = 0;
+        const maxValue = parseInt(counter.getAttribute("count"));
+        const countSpeed = maxValue < 100 ? 120 : 10;
+
+        if (!counter.hasAttribute("counter-on")) {
+          setInterval(() => {
+            if (count < maxValue && !counter.hasAttribute("counted")) {
+              count++;
+              counter.innerHTML = count;
+              counter.setAttribute("counter-on", "");
+            } else {
+              counter.setAttribute("counted", "");
+            }
+          }, countSpeed);
+        }
+      });
+    }
+  }
 };
 
 document.addEventListener("DOMContentLoaded", () => {
