@@ -262,10 +262,11 @@ Sections
   position: relative;
   margin-top: 60px;
   height: calc(100vh - 60px);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)), url("/wp-content/themes/eos-dev/dist/img/hero-banner.webp") center center repeat;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.8)), url("/wp-content/themes/eos-dev/dist/img/hero-banner.webp") center center repeat;
   background-size: cover;
 }
 .c-section.c-section--hero h1 {
+  font-size: 55px;
   font-weight: 300;
 }
 .c-section.c-section--hero .c__container {
