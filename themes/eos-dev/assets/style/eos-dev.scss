@@ -3,7 +3,7 @@ Colors
 -------------------------------------------------------------------*/
 $colorBlack: #111111;
 $colorGrafitti: #212121;
-$colorGray: #eee;
+$colorGray: #909090;
 $colorDarkGray: #2F2F2F;
 $colorMediumGray: #353535;
 $colorLightGray: #EEEEEE;
@@ -251,7 +251,7 @@ Buttons
     }
 
     &.c__button--gray {
-        background: $colorMediumGray;
+        background: $colorGray;
 
         &:hover,
         &:focus {
@@ -260,15 +260,15 @@ Buttons
 
         @keyframes button-highlight-gray {
             from {
-                background: $colorMediumGray;
+                filter: brightness(.8);
             }
 
             50% {
-                background: $colorDarkGray;
+                filter: brightness(1);
             }
 
             to {
-                background: $colorMediumGray;
+                filter: brightness(.8);
             }
         }
     }

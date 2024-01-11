@@ -222,7 +222,7 @@ Buttons
   }
 }
 .c__button.c__button--gray {
-  background: #353535;
+  background: #909090;
 }
 .c__button.c__button--gray:hover, .c__button.c__button--gray:focus {
   -webkit-animation: button-highlight-gray 1s infinite;
@@ -230,24 +230,24 @@ Buttons
 }
 @-webkit-keyframes button-highlight-gray {
   from {
-    background: #353535;
+    filter: brightness(0.8);
   }
   50% {
-    background: #2F2F2F;
+    filter: brightness(1);
   }
   to {
-    background: #353535;
+    filter: brightness(0.8);
   }
 }
 @keyframes button-highlight-gray {
   from {
-    background: #353535;
+    filter: brightness(0.8);
   }
   50% {
-    background: #2F2F2F;
+    filter: brightness(1);
   }
   to {
-    background: #353535;
+    filter: brightness(0.8);
   }
 }
 .c__button:after {
