@@ -9,7 +9,7 @@ window.onscroll = function () {
     }
 
     // Get the current scroll position of the window
-    const currentScrollPos = window.scrollY + 100;
+    const currentScrollPos = window.scrollY + 250;
 
     // Loop through all the links
     for (let i = 0; i < links.length; i++) {
@@ -35,6 +35,7 @@ window.onscroll = function () {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+
   //Run hero typing animation
   new TypeIt(".js-hero-typing", {
     speed: 50,
@@ -51,3 +52,5 @@ document.addEventListener("DOMContentLoaded", () => {
     .type("_Vamos começar!", { delay: 500 })
     .go();
 });
+
+

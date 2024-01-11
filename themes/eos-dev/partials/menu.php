@@ -1,5 +1,5 @@
 <nav class="c-nav">
-  <a href="/#inicio" class="c-nav__link">
+  <a href="/#inicio" class="c-nav__link <?= is_front_page() ? 'active': '' ?>">
       Início
   </a>
   <a href="/#sobre-mim" class="c-nav__link">
