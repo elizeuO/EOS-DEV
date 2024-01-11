@@ -7,6 +7,7 @@ $colorGray: #eee;
 $colorDarkGray: #2F2F2F;
 $colorMediumGray: #353535;
 $colorLightGray: #EEEEEE;
+$colorSilver: #D9D9D9;
 $colorRed: #A30A0A;
 $colorLightRed: #BB0000;
 
@@ -21,12 +22,47 @@ $textSizeH2: 32px;
 $textFontContent: 'Roboto',
 sans-serif;
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h5 {
+    margin: 0;
+}
+
 h1 {
     font-size: $textSizeH1;
 }
 
+h2 {
+    font-size: $textSizeH2;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 15px;
+    line-height: 20px;
+}
+
 b {
     font-weight: 600;
+}
+
+.c__title {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 30px;
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 100%;
+        height: 3px;
+        background: $colorRed;
+    }
 }
 
 .c__highlight-text {
@@ -191,6 +227,7 @@ Buttons
     position: relative;
     padding: 10px 15px;
     background: $colorRed;
+    color: white;
     text-transform: uppercase;
     overflow: hidden;
 
@@ -213,19 +250,27 @@ Buttons
         }
     }
 
-    &:after {
-        content: '';
-        display: inline-block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 0;
-        height: 0;
-        border-color: white;
-        border-width: 5px;
-        border-style: solid;
-        border-left-color: transparent;
-        border-bottom-color: transparent;
+    &.c__button--gray {
+        background: $colorMediumGray;
+
+        &:hover,
+        &:focus {
+            animation: button-highlight-gray 1s infinite;
+        }
+
+        @keyframes button-highlight-gray {
+            from {
+                background: $colorMediumGray;
+            }
+
+            50% {
+                background: $colorDarkGray;
+            }
+
+            to {
+                background: $colorMediumGray;
+            }
+        }
     }
 
     &:after {
@@ -237,7 +282,7 @@ Buttons
         width: 0;
         height: 0;
         border-color: white;
-        border-width: 5px;
+        border-width: 4px;
         border-style: solid;
         border-left-color: transparent;
         border-bottom-color: transparent;
@@ -277,7 +322,8 @@ Header
         }
 
         &:hover,
-        &:focus, &.active {
+        &:focus,
+        &.active {
             opacity: 1;
 
             &:after {
@@ -351,7 +397,34 @@ Sections
         }
     }
 
-    &.c-section--grafitti{
+    &.c-section--grafitti {
         background: $colorGrafitti;
+    }
+}
+
+//Section About
+.c-intro {
+    .c-intro__photo {
+        margin-right: 20px;
+    }
+
+    span {
+        color: $colorSilver;
+        font-size: 20px;
+    }
+}
+
+.c-about {
+    padding-left: 30px;
+    border-left: 1px solid $colorMediumGray;
+
+    p {
+        max-width: 80%;
+    }
+
+    .c__button{
+        &:not(:first-of-type){
+            margin-left: 5px;
+        }
     }
 }

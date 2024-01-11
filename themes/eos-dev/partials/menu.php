@@ -2,10 +2,10 @@
   <a href="/#inicio" class="c-nav__link">
       Início
   </a>
-  <a href="#sobre-mim" class="c-nav__link">
+  <a href="/#sobre-mim" class="c-nav__link">
       Sobre mim
   </a>
-  <a href="#skills" class="c-nav__link">
+  <a href="/#skills" class="c-nav__link">
       Skills
   </a>
  

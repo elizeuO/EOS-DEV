@@ -10,6 +10,13 @@ function getThemeImage($image)
     return get_template_directory_uri() . $path;
 }
 
+//Get theme doc
+function getThemeDoc($doc)
+{
+    $path = '/dist/doc/' . $doc;
+    return get_template_directory_uri() . $path;
+}
+
 //Register and enqueue the scripts
 function registerScripts()
 {

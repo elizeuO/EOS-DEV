@@ -19,7 +19,7 @@
 
         </div>
 
-        <a href="#sobre-mim" class="c-section--hero__mouse-icon">
+        <a href="/#sobre-mim" class="c-section--hero__mouse-icon">
             <img src="<?= getThemeImage('mouse.webp') ?>">
         </a>
     </div>
