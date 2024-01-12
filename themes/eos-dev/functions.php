@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 //removes wordpress admin bar
 add_filter('show_admin_bar', '__return_false');
@@ -47,3 +47,70 @@ function registerStyles()
     wp_enqueue_style('eos-dev');
 }
 add_action('wp_enqueue_scripts', 'registerStyles');
+
+//Render professional experiences tabs
+function renderExperiencesTabs()
+{
+    $query = new \WP_Query(['post_type' => 'experiencia', 'order' => 'asc', 'orderby' => 'date', 'post_status' => 'publish', 'posts_per_page' => -1]);
+    $posts = $query->posts;
+    ?>
+
+    <div class="c-tabs js-tabs">
+        <div class="l-flex l-flex--center l-flex--wrap l-flex--stretch l-flex--negative">
+
+            <nav class="c-tab__nav ">
+                <div class="l-flex l-flex--center l-flex--vertical l-flex--stretch c__full-height">
+                    <?php
+                    foreach ($posts as $key => $post) {
+                        $count = $key + 1;
+                        ?>
+
+                        <div class="c-tab__nav-link <?= 1 == $count ? 'active' : '' ?> js-tab-link" tab-id="<?= $count ?>">
+                            <h3>
+                                <?= $post->post_title ?>
+                            </h3>
+                        </div>
+
+                    <?php } ?>
+                </div>
+            </nav>
+
+            <div class="c-tab__content-wrapper">
+
+                <?php
+                $count = 1;
+                foreach ($posts as $key => $post) {
+                    $fields = get_fields($post->ID);
+                    $count = $key + 1
+                        ?>
+
+                    <div class="c-tab__content <?= 1 == $count ? 'active' : '' ?> js-tab-content" tab-id="<?= $count ?>">
+
+                        <div class="l-flex l-flex--center l-flex--vertical">
+                            <img src="<?= $fields['experiencia_logo'] ?>" class="c-experience-logo">
+
+                            <div class="c-experience-period">
+                                <span class="c-experience-period-start">
+                                    <?= $fields['experiencia_data_entrada'] ?>
+                                </span>
+                                -
+                                <span class="c-experience-period-end">
+                                    <?= $fields['experiencia_data_saida'] != '' ? $fields['experiencia_data_saida'] : 'Atualmente' ?>
+                                </span>
+                            </div>
+
+                            <div class="c-tab__content-text">
+                                <?= $post->post_content ?>
+                            </div>
+
+                        </div>
+
+                    </div>
+                <?php } ?>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <?php
+}

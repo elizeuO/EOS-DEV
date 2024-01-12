@@ -92,3 +92,30 @@ document.addEventListener("DOMContentLoaded", () => {
     .type("_Vamos começar!", { delay: 500 })
     .go();
 });
+
+document.addEventListener('click', (ev)=>{
+  let button = ev.target.closest('.js-tabs .js-tab-link[tab-id]');
+  if(null === button){return;}
+  
+  let tabs = button.closest('.js-tabs');
+  let link = button.getAttribute('tab-id');
+  let content = tabs.querySelector('.js-tab-content[tab-id="'+link+'"]');
+  
+  clearSelections(tabs);
+  button.classList.add('active');
+  content.classList.add('active');
+ });
+         
+function clearSelections(tabs){
+  let links = tabs.querySelectorAll('.js-tab-link[tab-id].active'); 
+  let contents = tabs.querySelectorAll('.js-tab-content[tab-id].active');
+  if((null === links) || (null === contents)){return};
+        
+  links.forEach((link)=>{
+    link.classList.remove('active');
+  });
+  
+  contents.forEach((content)=>{
+    content.classList.remove('active');
+  });
+}				 

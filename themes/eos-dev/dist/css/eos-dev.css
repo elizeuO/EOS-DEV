@@ -163,8 +163,7 @@ img {
 
 .c__center {
   text-align: center;
-  -moz-text-align-last: center;
-       text-align-last: center;
+  text-align-last: center;
 }
 
 .c__full-height {
@@ -200,19 +199,7 @@ Buttons
   overflow: hidden;
 }
 .c__button:hover, .c__button:focus {
-  -webkit-animation: button-highlight 1s infinite;
-          animation: button-highlight 1s infinite;
-}
-@-webkit-keyframes button-highlight {
-  from {
-    background: #A30A0A;
-  }
-  50% {
-    background: #BB0000;
-  }
-  to {
-    background: #A30A0A;
-  }
+  animation: button-highlight 1s infinite;
 }
 @keyframes button-highlight {
   from {
@@ -229,19 +216,7 @@ Buttons
   background: #909090;
 }
 .c__button.c__button--gray:hover, .c__button.c__button--gray:focus {
-  -webkit-animation: button-highlight-gray 1s infinite;
-          animation: button-highlight-gray 1s infinite;
-}
-@-webkit-keyframes button-highlight-gray {
-  from {
-    filter: brightness(0.8);
-  }
-  50% {
-    filter: brightness(1);
-  }
-  to {
-    filter: brightness(0.8);
-  }
+  animation: button-highlight-gray 1s infinite;
 }
 @keyframes button-highlight-gray {
   from {
@@ -344,19 +319,8 @@ Sections
   position: absolute;
   bottom: 20px;
   left: 50%;
-  -webkit-animation: mouse 1.2s infinite;
-          animation: mouse 1.2s infinite;
+  animation: mouse 1.2s infinite;
   transform: translateX(-50%);
-}
-@-webkit-keyframes mouse {
-  from {
-    bottom: 35px;
-    opacity: 0.4;
-  }
-  to {
-    bottom: 20px;
-    opacity: 0.8;
-  }
 }
 @keyframes mouse {
   from {
@@ -488,8 +452,7 @@ Sections
   padding-right: 20px;
   max-height: 120px;
   text-align: left;
-  -moz-text-align-last: left;
-       text-align-last: left;
+  text-align-last: left;
   overflow: auto;
   /* Handle */
 }

@@ -1,5 +1,5 @@
 <section class="c-section c-section--hero" id="inicio">
-    <div class="c__container">
+    <div class="c__container c__full-height">
 
         <div class="c-section--hero__content c__center">
 
