@@ -11,3 +11,4 @@ uploads.tar.gz
 .DS_Store
 .htaccess
 languages
+.vscode/settings.json
