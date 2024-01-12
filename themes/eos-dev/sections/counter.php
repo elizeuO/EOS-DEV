@@ -11,7 +11,7 @@
 
                         <div class="c-counter__info">
                             <div class="c-counter__number js-counter" count="5">
-                                5
+                                0
                             </div>
                             Anos de experiência
                         </div>
@@ -30,7 +30,7 @@
 
                         <div class="c-counter__info">
                             <div class="c-counter__number js-counter" count="50">
-                                50
+                                0
                             </div>
                             Projetos desenvovidos
                         </div>
@@ -50,7 +50,7 @@
 
                         <div class="c-counter__info">
                             <div class="c-counter__number js-counter" count="20">
-                                20
+                                0
                             </div>
                             Clientes satisfeitos
                         </div>
@@ -67,7 +67,7 @@
 
                         <div class="c-counter__info">
                             <div class="c-counter__number js-counter" count="1000">
-                                1000
+                                0
                             </div>
                             Litros de café ingeridos
                         </div>

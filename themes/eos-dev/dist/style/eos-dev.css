@@ -517,3 +517,59 @@ Sections
   color: #BB0000;
   font-weight: 600;
 }
+
+.c-skill .c-flipbox__holder {
+  background: #212121;
+}
+.c-skill .c-flipbox__front-face {
+  background: linear-gradient(0deg, rgba(33, 33, 33, 0.8), rgba(33, 33, 33, 0.8)), url("/wp-content/themes/eos-dev/dist/img/glass-effect.webp") center center repeat;
+  background-size: cover;
+}
+.c-skill .c-flipbox__back-face {
+  background: linear-gradient(0deg, rgba(33, 33, 33, 0.8), rgba(33, 33, 33, 0.8)), url("/wp-content/themes/eos-dev/dist/img/glass-effect.webp") center center repeat;
+  background-size: cover;
+}
+.c-skill .c-skill__title {
+  margin-top: 5px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.c-flipbox {
+  perspective: 1000px;
+  cursor: pointer;
+  height: 200px;
+}
+.c-flipbox .c-flipbox__holder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: all 800ms;
+}
+.c-flipbox .c-flipbox__holder .c-flipbox__back-face {
+  transform: rotateY(180deg);
+}
+.c-flipbox .c-flipbox__holder .c-flipbox__front-face,
+.c-flipbox .c-flipbox__holder .c-flipbox__back-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+.c-flipbox .c-flipbox__holder .c-flipbox__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%) translateZ(35px);
+  z-index: 1;
+}
+.c-flipbox:hover .c-flipbox__holder {
+  transform: rotateY(180deg);
+}

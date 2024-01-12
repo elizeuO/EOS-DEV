@@ -114,3 +114,39 @@ function renderExperiencesTabs()
     </div>
     <?php
 }
+
+function renderSkills()
+{
+    $query = new \WP_Query(['post_type' => 'skill', 'order' => 'asc', 'orderby' => 'name', 'post_status' => 'publish', 'posts_per_page' => -1]);
+    $posts = $query->posts;
+
+    foreach ($posts as $key => $post) {
+        $fields = get_fields($post->ID);
+        ?>
+
+        <article class="l__col-3">
+            <div class="c-skill c-flipbox">
+                <div class="c-flipbox__holder">
+
+                    <div class="c-flipbox__front-face">
+                        <div class="c-flipbox__content">
+                            <img src="<?=  $fields['skill_logo'] ?>">
+
+                            <h3 class="c-skill__title">
+                                <?= $post->post_title ?>
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="c-flipbox__back-face">
+                        <div class="c-skill__text c-flipbox__content">
+                        <?= $fields['skill_info'] ?>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </article>
+    <?php }
+}
