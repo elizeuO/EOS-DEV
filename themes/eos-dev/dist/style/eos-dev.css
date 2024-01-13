@@ -82,16 +82,17 @@ Flex
   margin-right: -12px;
 }
 
+.l-flex--negative-less {
+  margin-left: -6px;
+  margin-right: -6px;
+}
+
 .l-flex--vertical {
   flex-direction: column;
 }
 
-.l-flex__left {
-  margin-right: auto;
-}
-
-.l-flex__right {
-  margin-left: auto;
+.l-flex--spread {
+  justify-content: space-between;
 }
 
 .l__col-12, .l__col-9, .l__col-8, .l__col-6, .l__col-4, .l__col-3, .l__col-2-4 {
@@ -99,7 +100,7 @@ Flex
 }
 
 .l__col--less-padding {
-  padding: 0 12px 12px 0;
+  padding: 6px;
 }
 
 .l__col-2-4 {

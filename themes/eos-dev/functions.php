@@ -124,7 +124,7 @@ function renderSkills()
         $fields = get_fields($post->ID);
         ?>
 
-        <article class="l__col-3">
+        <article class="l__col-2-4 l__col--less-padding">
             <div class="c-skill c-flipbox">
                 <div class="c-flipbox__holder">
 

@@ -6,7 +6,7 @@
         </h2>
 
         <div class="c-skills">
-            <div class="l-flex l--center l-flex--wrap l-flex--stretch l-flex--negative">
+            <div class="l-flex l-flex--center l-flex--wrap l-flex--stretch l-flex--negative-less">
                 <?= renderSkills() ?>
             </div>
         </div>

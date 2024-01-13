@@ -19,15 +19,15 @@
 <body>
     <header class="c-header">
         <div class="c__container">
-            <div class="l-flex l-flex--center l-flex--wrap">
+            <div class="l-flex l-flex--center l-flex--spread l-flex--wrap">
 
-                <a href="" class="c__logo l-flex__left">
+                <a href="" class="c__logo">
                     <img src="<?= getThemeImage('logo.webp')?>" alt="Eos dev">
                 </a>
 
               <?php include('menu.php'); ?>
 
-                <a href="/#contato" class="c__button l-flex__right">
+                <a href="/#contato" class="c__button">
                     Vamos trabalhar juntos?
                 </a>
 

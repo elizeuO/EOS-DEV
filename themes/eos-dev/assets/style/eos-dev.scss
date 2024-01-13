@@ -79,6 +79,8 @@ Transition
 /*-------------------------------------------------------------------
 Flex
 -------------------------------------------------------------------*/
+$flexColGap: 12px;
+$flexLessColgap: 6px;
 
 .l-flex {
     display: flex;
@@ -98,28 +100,29 @@ Flex
 }
 
 .l-flex--negative {
-    margin-left: -12px;
-    margin-right: -12px;
+    margin-left: -$flexColGap;
+    margin-right: -$flexColGap;
+}
+
+.l-flex--negative-less{
+    margin-left: -$flexLessColgap;
+    margin-right: -$flexLessColgap;
 }
 
 .l-flex--vertical {
     flex-direction: column;
 }
 
-.l-flex__left {
-    margin-right: auto;
-}
-
-.l-flex__right {
-    margin-left: auto;
+.l-flex--spread{
+    justify-content: space-between;
 }
 
 %flexPadding {
-    padding: 12px;
+    padding: $flexColGap;
 }
 
-%flexColLessPadding {
-    padding: 0 12px 12px 0;
+%flexLessPadding {
+    padding: 6px;
 }
 
 .l__col-2-4 {
@@ -158,7 +161,7 @@ Flex
 }
 
 .l__col--less-padding {
-    @extend %flexColLessPadding;
+    @extend %flexLessPadding;
 }
 
 /*-------------------------------------------------------------------
