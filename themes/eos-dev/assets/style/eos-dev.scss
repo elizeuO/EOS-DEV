@@ -182,7 +182,7 @@ body {
 }
 
 body {
-    background: $colorGrafitti;
+    background: $colorBlack;
     color: white;
     font-size: $textSizecontent;
     font-family: $textFontContent;
@@ -369,7 +369,6 @@ Sections
 .c-section {
     padding-top: 60px;
     padding-bottom: 60px;
-    background: $colorBlack;
 
     &.c-section--hero {
         position: relative;
@@ -615,7 +614,7 @@ Sections
 
     @extend %styledScroll;
     &::-webkit-scrollbar {
-        height: 8px;
+        height: 5px;
     }
 
     .c-skill {
@@ -688,4 +687,11 @@ Sections
         }
     }
 
+}
+
+/*-------------------------------------------------------------------
+Footer
+-------------------------------------------------------------------*/
+.c-footer{
+    padding: 30px 20px;
 }

@@ -148,7 +148,7 @@ body {
 }
 
 body {
-  background: #212121;
+  background: #111111;
   color: white;
   font-size: 16px;
   font-family: "Roboto", sans-serif;
@@ -303,7 +303,6 @@ Sections
 .c-section {
   padding-top: 60px;
   padding-bottom: 60px;
-  background: #111111;
 }
 .c-section.c-section--hero {
   position: relative;
@@ -499,7 +498,7 @@ Sections
   overflow-x: auto;
 }
 .c-skills::-webkit-scrollbar {
-  height: 8px;
+  height: 5px;
 }
 .c-skills .c-skill .c-flipbox__holder {
   background: #212121;
@@ -555,4 +554,11 @@ Sections
 }
 .c-flipbox:hover .c-flipbox__holder {
   transform: rotateY(180deg);
+}
+
+/*-------------------------------------------------------------------
+Footer
+-------------------------------------------------------------------*/
+.c-footer {
+  padding: 30px 20px;
 }
