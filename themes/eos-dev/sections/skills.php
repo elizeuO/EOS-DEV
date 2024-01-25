@@ -5,10 +5,8 @@
             Minhas skills
         </h2>
 
-        <div class="c-skills">
-            <div class="l-flex l-flex--center l-flex--wrap l-flex--stretch l-flex--negative-less">
+        <div class="c-skills js-horizontal-scroll">
                 <?= renderSkills() ?>
-            </div>
         </div>
 
     </div>

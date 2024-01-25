@@ -91,31 +91,57 @@ document.addEventListener("DOMContentLoaded", () => {
     .delete(30)
     .type("_Vamos começar!", { delay: 500 })
     .go();
+
+  handleHorizontalScroll();
 });
 
-document.addEventListener('click', (ev)=>{
-  let button = ev.target.closest('.js-tabs .js-tab-link[tab-id]');
-  if(null === button){return;}
-  
-  let tabs = button.closest('.js-tabs');
-  let link = button.getAttribute('tab-id');
-  let content = tabs.querySelector('.js-tab-content[tab-id="'+link+'"]');
-  
+//Handle tabs
+document.addEventListener("click", (ev) => {
+  let button = ev.target.closest(".js-tabs .js-tab-link[tab-id]");
+  if (null === button) {
+    return;
+  }
+
+  let tabs = button.closest(".js-tabs");
+  let link = button.getAttribute("tab-id");
+  let content = tabs.querySelector('.js-tab-content[tab-id="' + link + '"]');
+
   clearSelections(tabs);
-  button.classList.add('active');
-  content.classList.add('active');
- });
-         
-function clearSelections(tabs){
-  let links = tabs.querySelectorAll('.js-tab-link[tab-id].active'); 
-  let contents = tabs.querySelectorAll('.js-tab-content[tab-id].active');
-  if((null === links) || (null === contents)){return};
-        
-  links.forEach((link)=>{
-    link.classList.remove('active');
+  button.classList.add("active");
+  content.classList.add("active");
+});
+
+function clearSelections(tabs) {
+  let links = tabs.querySelectorAll(".js-tab-link[tab-id].active");
+  let contents = tabs.querySelectorAll(".js-tab-content[tab-id].active");
+  if (null === links || null === contents) {
+    return;
+  }
+
+  links.forEach((link) => {
+    link.classList.remove("active");
   });
-  
-  contents.forEach((content)=>{
-    content.classList.remove('active');
+
+  contents.forEach((content) => {
+    content.classList.remove("active");
   });
-}				 
+}
+
+//Horizontal scroll
+function handleHorizontalScroll() {
+  const scrollContainers = document.querySelectorAll(".js-horizontal-scroll");
+  if (scrollContainers.length === 0) {
+    return;
+  }
+
+  scrollContainers.forEach((scrollContainer) => {
+    scrollContainer.addEventListener("wheel", function (event) {
+      event.preventDefault();
+      const delta = Math.max(
+        -1,
+        Math.min(1, event.wheelDelta || -event.detail)
+      );
+      scrollContainer.scrollLeft -= delta * 40;
+    });
+  });
+}

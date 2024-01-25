@@ -164,8 +164,7 @@ img {
 
 .c__center {
   text-align: center;
-  -moz-text-align-last: center;
-       text-align-last: center;
+  text-align-last: center;
 }
 
 .c__full-height {
@@ -201,19 +200,7 @@ Buttons
   overflow: hidden;
 }
 .c__button:hover, .c__button:focus {
-  -webkit-animation: button-highlight 1s infinite;
-          animation: button-highlight 1s infinite;
-}
-@-webkit-keyframes button-highlight {
-  from {
-    background: #A30A0A;
-  }
-  50% {
-    background: #BB0000;
-  }
-  to {
-    background: #A30A0A;
-  }
+  animation: button-highlight 1s infinite;
 }
 @keyframes button-highlight {
   from {
@@ -230,19 +217,7 @@ Buttons
   background: #909090;
 }
 .c__button.c__button--gray:hover, .c__button.c__button--gray:focus {
-  -webkit-animation: button-highlight-gray 1s infinite;
-          animation: button-highlight-gray 1s infinite;
-}
-@-webkit-keyframes button-highlight-gray {
-  from {
-    filter: brightness(0.8);
-  }
-  50% {
-    filter: brightness(1);
-  }
-  to {
-    filter: brightness(0.8);
-  }
+  animation: button-highlight-gray 1s infinite;
 }
 @keyframes button-highlight-gray {
   from {
@@ -268,6 +243,22 @@ Buttons
   border-style: solid;
   border-left-color: transparent;
   border-bottom-color: transparent;
+}
+
+/*-------------------------------------------------------------------
+Scroll
+-------------------------------------------------------------------*/
+.c-skills::-webkit-scrollbar-track, .c-tabs .c-tab__content-wrapper .c-tab__content .c-tab__content-text::-webkit-scrollbar-track {
+  background: #212121;
+}
+.c-section--grafitti .c-skills::-webkit-scrollbar-track, .c-section--grafitti .c-tabs .c-tab__content-wrapper .c-tab__content .c-tab__content-text::-webkit-scrollbar-track, .c-tabs .c-tab__content-wrapper .c-tab__content .c-section--grafitti .c-tab__content-text::-webkit-scrollbar-track {
+  background: #111111;
+}
+.c-skills::-webkit-scrollbar-thumb, .c-tabs .c-tab__content-wrapper .c-tab__content .c-tab__content-text::-webkit-scrollbar-thumb {
+  background: #A30A0A;
+}
+.c-skills::-webkit-scrollbar-thumb:hover, .c-tabs .c-tab__content-wrapper .c-tab__content .c-tab__content-text::-webkit-scrollbar-thumb:hover {
+  background: #BB0000;
 }
 
 /*-------------------------------------------------------------------
@@ -345,19 +336,8 @@ Sections
   position: absolute;
   bottom: 20px;
   left: 50%;
-  -webkit-animation: mouse 1.2s infinite;
-          animation: mouse 1.2s infinite;
+  animation: mouse 1.2s infinite;
   transform: translateX(-50%);
-}
-@-webkit-keyframes mouse {
-  from {
-    bottom: 35px;
-    opacity: 0.4;
-  }
-  to {
-    bottom: 20px;
-    opacity: 0.8;
-  }
 }
 @keyframes mouse {
   from {
@@ -489,20 +469,8 @@ Sections
   padding-right: 20px;
   max-height: 120px;
   text-align: left;
-  -moz-text-align-last: left;
-       text-align-last: left;
+  text-align-last: left;
   overflow: auto;
-  /* Handle */
-}
-.c-tabs .c-tab__content-wrapper .c-tab__content .c-tab__content-text::-webkit-scrollbar-track {
-  background: #111111;
-  /* color of the track (the area behind the thumb) */
-}
-.c-tabs .c-tab__content-wrapper .c-tab__content .c-tab__content-text::-webkit-scrollbar-thumb {
-  background: #A30A0A;
-}
-.c-tabs .c-tab__content-wrapper .c-tab__content .c-tab__content-text::-webkit-scrollbar-thumb:hover {
-  background: #BB0000;
 }
 .c-tabs .c-tab__content-wrapper .c-tab__content .c-tab__content-text::-webkit-scrollbar {
   width: 4px;
@@ -519,18 +487,32 @@ Sections
   font-weight: 600;
 }
 
-.c-skill .c-flipbox__holder {
+.c-skills {
+  display: grid;
+  padding-bottom: 15px;
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 12px;
+  grid-auto-columns: 20%;
+  grid-auto-flow: column;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.c-skills::-webkit-scrollbar {
+  height: 8px;
+}
+.c-skills .c-skill .c-flipbox__holder {
   background: #212121;
 }
-.c-skill .c-flipbox__front-face {
+.c-skills .c-skill .c-flipbox__front-face {
   background: linear-gradient(0deg, rgba(33, 33, 33, 0.8), rgba(33, 33, 33, 0.8)), url("/wp-content/themes/eos-dev/dist/img/glass-effect.webp") center center repeat;
   background-size: cover;
 }
-.c-skill .c-flipbox__back-face {
+.c-skills .c-skill .c-flipbox__back-face {
   background: linear-gradient(0deg, rgba(33, 33, 33, 0.8), rgba(33, 33, 33, 0.8)), url("/wp-content/themes/eos-dev/dist/img/glass-effect.webp") center center repeat;
   background-size: cover;
 }
-.c-skill .c-skill__title {
+.c-skills .c-skill .c-skill__title {
   margin-top: 5px;
   font-size: 18px;
   font-weight: 400;
