@@ -5,6 +5,8 @@ include('sections/sobre-mim.php');
 include('sections/counter.php');
 include('sections/experiencias-profissionais.php');
 include('sections/skills.php');
+include('sections/beneficios-servicos.php');
+include('sections/depoimentos.php');
 include('sections/contato.php');
 include('partials/footer.php');
 ?>

@@ -156,6 +156,35 @@ function renderSkills()
     <?php }
 }
 
+
+function renderServiceBenefits()
+{
+    $query = new \WP_Query(['post_type' => 'beneficio-servicos', 'order' => 'asc', 'orderby' => 'name', 'post_status' => 'publish', 'posts_per_page' => -1]);
+    $posts = $query->posts;
+
+    foreach ($posts as $key => $post) {
+        $fields = get_fields($post->ID);
+        ?>
+
+        <article class="l__col-3 l__col--less-padding">
+            <div class="c-benefit">
+
+                <div class="c-benefit__title l-flex l-flex--center">
+                    <img src="<?= get_the_post_thumbnail_url($post) ?>">
+                    <h3>
+                        <?= $post->post_title ?>
+                    </h3>
+                </div>
+                <div class="c-benefit__text">
+                    <?= $fields['beneficio_servicos_texto'] ?>
+                </div>
+
+            </div>
+        </article>
+    <?php }
+}
+
+
 function getSiteInfo($info, $is_link = false)
 {
     $whatsappLink = 'https://api.whatsapp.com/send?phone=55';

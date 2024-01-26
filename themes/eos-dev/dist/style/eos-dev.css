@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*-------------------------------------------------------------------
 Colors
 -------------------------------------------------------------------*/
@@ -579,6 +580,28 @@ Sections
 }
 .c-flipbox:hover .c-flipbox__holder {
   transform: rotateY(180deg);
+}
+
+/*Section Benefícios dos serviços */
+.c-benefit {
+  padding: 20px;
+  height: 100%;
+  text-align: start;
+  text-align-last: start;
+  background: linear-gradient(0deg, rgba(33, 33, 33, 0.85), rgba(33, 33, 33, 0.85)), url(/wp-content/themes/eos-dev/dist/img/glass-effect.webp) center center repeat;
+  background-size: cover;
+}
+.c-benefit .c-benefit__title {
+  justify-content: start;
+}
+.c-benefit .c-benefit__title img {
+  margin-right: 10px;
+}
+.c-benefit .c-benefit__title h3 {
+  font-size: 22px;
+}
+.c-benefit .c-benefit__text {
+  margin-top: 15px;
 }
 
 /*Section Contato */
