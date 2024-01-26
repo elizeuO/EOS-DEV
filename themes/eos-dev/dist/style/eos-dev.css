@@ -501,6 +501,9 @@ Sections
   padding: 0;
   list-style-type: none;
 }
+.c-tabs .c-tab__content-wrapper .c-tab__content .c-tab__content-text ul li {
+  margin-bottom: 5px;
+}
 .c-tabs .c-tab__content-wrapper .c-tab__content .c-tab__content-text ul li:before {
   content: "+";
   margin-right: 5px;
