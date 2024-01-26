@@ -136,12 +136,31 @@ function handleHorizontalScroll() {
 
   scrollContainers.forEach((scrollContainer) => {
     scrollContainer.addEventListener("wheel", function (event) {
-      event.preventDefault();
+      //Middle mouse button behavior
       const delta = Math.max(
         -1,
         Math.min(1, event.wheelDelta || -event.detail)
       );
-      scrollContainer.scrollLeft -= delta * 40;
+
+      const isAtMinScroll = scrollContainer.scrollLeft === 0;
+      const isAtMaxScroll =
+        scrollContainer.scrollLeft + scrollContainer.clientWidth + 1 >=
+        scrollContainer.scrollWidth;
+
+      const isScrollingDown = delta < 0;
+      const isScrollingUp = delta > 0;
+
+      const canScroll =
+        (isAtMinScroll && isScrollingDown) ||
+        !isAtMinScroll ||
+        (isAtMaxScroll && isScrollingUp)
+          ? true
+          : false;
+
+      if (canScroll && !(isAtMaxScroll && isScrollingDown)) {
+        event.preventDefault();
+        scrollContainer.scrollLeft -= delta * 40;
+      }
     });
   });
 }
