@@ -40,8 +40,15 @@ add_action('wp_enqueue_scripts', 'registerScripts');
 function registerStyles()
 {
     $path = get_template_directory_uri() . '/dist/style/';
+
     wp_register_style('normalize', $path . 'normalize.min.css', array(), false, false);
     wp_enqueue_style('normalize');
+
+    wp_register_style('fontawesome', $path . 'fontawesome.min.css', array(), '6.5.1', false);
+    wp_enqueue_style('fontawesome');
+
+    wp_register_style('brands', $path . 'brands.min.css', array(), '6.5.1', false);
+    wp_enqueue_style('brands');
 
     wp_register_style('eos-dev', $path . 'eos-dev.css', array(), false, false);
     wp_enqueue_style('eos-dev');
@@ -124,27 +131,47 @@ function renderSkills()
         $fields = get_fields($post->ID);
         ?>
 
-            <div class="c-skill c-flipbox">
-                <div class="c-flipbox__holder">
+        <div class="c-skill c-flipbox">
+            <div class="c-flipbox__holder">
 
-                    <div class="c-flipbox__front-face">
-                        <div class="c-flipbox__content">
-                            <img src="<?=  $fields['skill_logo'] ?>">
+                <div class="c-flipbox__front-face">
+                    <div class="c-flipbox__content">
+                        <img src="<?= $fields['skill_logo'] ?>">
 
-                            <h3 class="c-skill__title">
-                                <?= $post->post_title ?>
-                            </h3>
-                        </div>
+                        <h3 class="c-skill__title">
+                            <?= $post->post_title ?>
+                        </h3>
                     </div>
+                </div>
 
-                    <div class="c-flipbox__back-face">
-                        <div class="c-skill__text c-flipbox__content">
+                <div class="c-flipbox__back-face">
+                    <div class="c-skill__text c-flipbox__content">
                         <?= $fields['skill_info'] ?>
-                        </div>
                     </div>
-
                 </div>
 
             </div>
+
+        </div>
     <?php }
+}
+
+function getSiteInfo($info, $is_link = false)
+{
+    $whatsappLink = 'https://api.whatsapp.com/send?phone=55';
+
+    switch ($info) {
+        case 'whatsapp':
+            return $is_link ? $whatsappLink . preg_replace("/[^0-9]/", "", get_field('site_whatsapp', 'option'))
+                : get_field('site_whatsapp', 'option');
+
+        case 'email':
+            return $is_link ? 'mailto:' . get_field('site_email', 'option') : get_field('site_email', 'option');
+
+        case 'github':
+            return get_field('site_github', 'option');
+
+        case 'linkedin':
+            return get_field('site_linkedin', 'option');
+    }
 }

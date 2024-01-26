@@ -2,7 +2,7 @@
 <footer class="c-footer">
     <div class="c__container">
         <div class="l-flex l-flex--center l-flex--wrap l-flex--spread">
-            <a href="/">
+            <a href="/" class="c__logo">
                 <img src="<?= getThemeImage('logo.webp') ?>" alt="Eos Dev">
             </a>
 

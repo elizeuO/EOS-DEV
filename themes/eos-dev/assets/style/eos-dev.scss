@@ -22,6 +22,25 @@ $textSizeH2: 32px;
 $textFontContent: 'Roboto',
 sans-serif;
 
+@font-face {
+    font-family: 'Fa Brands';
+    src: url('/wp-content/themes/eos-dev/dist/fonts/fa-brands-400.ttf');
+}
+
+@font-face {
+    font-family: 'Fa Solid';
+    src: url('/wp-content/themes/eos-dev/dist/fonts/fa-solid-900.ttf');
+}
+
+.fa-brands,
+.fab {
+    font-family: 'Fa Brands' !important;
+}
+
+.fa-solid{
+    font-family: 'Fa Solid' !important;   
+}
+
 h1,
 h2,
 h3,
@@ -42,7 +61,7 @@ h2 {
 p {
     margin-top: 0;
     margin-bottom: 15px;
-    line-height: 20px;
+    line-height: 22px;
 }
 
 b {
@@ -80,7 +99,7 @@ Transition
 Flex
 -------------------------------------------------------------------*/
 $colGap: 12px;
-$lessColGap: 6px;
+$colLessGap: 6px;
 
 .l-flex {
     display: flex;
@@ -105,8 +124,8 @@ $lessColGap: 6px;
 }
 
 .l-flex--negative-less {
-    margin-left: -$lessColGap;
-    margin-right: -$lessColGap;
+    margin-left: -$colLessGap;
+    margin-right: -$colLessGap;
 }
 
 .l-flex--vertical {
@@ -122,7 +141,7 @@ $lessColGap: 6px;
 }
 
 %flexLessPadding {
-    padding: $lessColGap
+    padding: $colLessGap;
 }
 
 .l__col-2-4 {
@@ -237,6 +256,9 @@ Buttons
     color: white;
     text-transform: uppercase;
     overflow: hidden;
+    border: none;
+    outline: none !important;
+    cursor: pointer;
 
     &:hover,
     &:focus {
@@ -300,9 +322,9 @@ Buttons
 Scroll
 -------------------------------------------------------------------*/
 %styledScroll {
-   
 
-    &::-webkit-scrollbar-track{
+
+    &::-webkit-scrollbar-track {
         background: $colorGrafitti;
     }
 
@@ -575,6 +597,7 @@ Sections
                 overflow: auto;
 
                 @extend %styledScroll;
+
                 &::-webkit-scrollbar {
                     width: 4px;
                 }
@@ -603,7 +626,7 @@ Sections
 //Section Skills
 .c-skills {
     display: grid;
-    padding-bottom:  15px;
+    padding-bottom: 15px;
     grid-template-columns: repeat(5, 20%);
     grid-template-rows: repeat(2, 1fr);
     gap: $colGap;
@@ -613,6 +636,7 @@ Sections
     overflow-x: auto;
 
     @extend %styledScroll;
+
     &::-webkit-scrollbar {
         height: 5px;
     }
@@ -689,9 +713,77 @@ Sections
 
 }
 
+/*Section Contato */
+.c-contact-info-column{
+    padding-left: 40px;
+}
+
+.c-contact-info {
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+
+        i{
+            margin-right: 5px;
+            font-size: 18px;
+            @extend %transition;
+        }
+
+        a{
+            &:hover, &:focus{
+                i{
+                    color: $colorRed;
+                }
+            }
+        }
+    }
+}
+
+/*-------------------------------------------------------------------
+Forms
+-------------------------------------------------------------------*/
+input,
+select,
+textarea {
+    padding: 15px 12px;
+    width: 100%;
+    color: white;
+    background: $colorGrafitti !important;
+    border: 1px solid $colorDarkGray;
+    @extend %transition;
+
+    &:focus {
+        border-color: $colorGray;
+        border-left: 5px solid $colorRed;
+    }
+
+    &::placeholder {
+        color: white;
+    }
+}
+
+.wpcf7 p {
+    margin: 0 !important;
+}
+
+.wpcf7-response-output{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.wpcf7-not-valid-tip{
+    margin-top: 10px;
+}
+
 /*-------------------------------------------------------------------
 Footer
 -------------------------------------------------------------------*/
-.c-footer{
+.c-footer {
     padding: 30px 20px;
 }
