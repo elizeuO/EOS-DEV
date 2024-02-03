@@ -30,6 +30,9 @@ function registerScripts()
     wp_register_script('typeit', $path . 'typeit.min.js', array(), '8.7.1', true);
     wp_enqueue_script('typeit');
 
+    wp_register_script('flickity', $path . 'flickity.min.js', array(), '2.3.0', true);
+    wp_enqueue_script('flickity');
+
     wp_register_script('eos-dev', $path . 'eos-dev.js', array(), '1.0.0', true);
     wp_enqueue_script('eos-dev');
 }
@@ -49,6 +52,9 @@ function registerStyles()
 
     wp_register_style('brands', $path . 'brands.min.css', array(), '6.5.1', false);
     wp_enqueue_style('brands');
+
+    wp_register_style('flickity', $path . 'flickity.min.css', array(), '2.3.0', false);
+    wp_enqueue_style('flickity');
 
     wp_register_style('eos-dev', $path . 'eos-dev.css', array(), false, false);
     wp_enqueue_style('eos-dev');
