@@ -37,8 +37,8 @@ sans-serif;
     font-family: 'Fa Brands' !important;
 }
 
-.fa-solid{
-    font-family: 'Fa Solid' !important;   
+.fa-solid {
+    font-family: 'Fa Solid' !important;
 }
 
 h1,
@@ -386,6 +386,53 @@ Header
 }
 
 /*-------------------------------------------------------------------
+Slider
+-------------------------------------------------------------------*/
+.c-slider {
+    margin: 0 auto;
+    width: 80%;
+
+    .flickity-slider{
+        display: flex;
+        align-items: stretch;
+    }
+
+    .flickity-button {
+        width: 30px;
+        height: 30px;
+        background: $colorSilver;
+        @extend %transition;
+
+        &:hover,
+        &:focus {
+            background: $colorRed;
+        }
+
+        &.previous {
+            left: -50px;
+        }
+
+        &.next {
+            right: -50px;
+        }
+    }
+
+    .flickity-page-dots .dot {
+        background: $colorGray;
+        width: 11px;
+        height: 11px;
+        @extend %transition;
+        opacity: 1;
+
+        &:hover,
+        &:focus,
+        &.is-selected {
+            background: $colorRed;
+        }
+    }
+}
+
+/*-------------------------------------------------------------------
 Sections
 -------------------------------------------------------------------*/
 .c-section {
@@ -715,33 +762,62 @@ Sections
 }
 
 /*Section Benefícios dos serviços */
-.c-benefit{
+.c-benefit {
     padding: 20px;
     height: 100%;
     text-align: start;
     text-align-last: start;
     background: linear-gradient(0deg, rgba(33, 33, 33, 0.85), rgba(33, 33, 33, 0.85)), url(/wp-content/themes/eos-dev/dist/img/glass-effect.webp) center center repeat;
     background-size: cover;
-    
-    .c-benefit__title{
+
+    .c-benefit__title {
         justify-content: start;
-        img{
+
+        img {
             margin-right: 10px;
         }
-    
-        h3{
+
+        h3 {
             font-size: 22px;
         }
     }
 
-    .c-benefit__text{
+    .c-benefit__text {
         margin-top: 15px;
     }
-  
+
+}
+
+/*Section Depoimentos*/
+.c-testimonial {
+    padding: 30px;
+    min-height: 240px;
+    background: linear-gradient(0deg, rgba(33, 33, 33, 0.89), rgba(33, 33, 33, 0.89)), url(/wp-content/themes/eos-dev/dist/img/glass-effect.webp) center center repeat;
+    background-size: cover !important;
+    text-align: start !important;
+    text-align-last: start !important;
+    border-bottom: 2px solid $colorMediumGray;
+
+    .c-testimonial__info {
+        justify-content: start;
+
+        img {
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .c-testimonial__ocupation {
+            color: $colorGray;
+        }
+    }
+
+    .c-testimonial__text {
+        margin-top: 10px;
+    }
 }
 
 /*Section Contato */
-.c-contact-info-column{
+.c-contact-info-column {
     padding-left: 40px;
 }
 
@@ -756,15 +832,17 @@ Sections
             margin-bottom: 15px;
         }
 
-        i{
+        i {
             margin-right: 5px;
             font-size: 18px;
             @extend %transition;
         }
 
-        a{
-            &:hover, &:focus{
-                i{
+        a {
+
+            &:hover,
+            &:focus {
+                i {
                     color: $colorRed;
                 }
             }
@@ -799,12 +877,12 @@ textarea {
     margin: 0 !important;
 }
 
-.wpcf7-response-output{
+.wpcf7-response-output {
     margin-left: 0 !important;
     margin-right: 0 !important;
 }
 
-.wpcf7-not-valid-tip{
+.wpcf7-not-valid-tip {
     margin-top: 10px;
 }
 

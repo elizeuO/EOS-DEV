@@ -73,7 +73,7 @@ Transition
 -------------------------------------------------------------------*/
 input,
 select,
-textarea, .c-contact-info li i, .c-tabs .c-tab__nav .c-tab__nav-link, .c-nav .c-nav__link:after, a {
+textarea, .c-contact-info li i, .c-tabs .c-tab__nav .c-tab__nav-link, .c-slider .flickity-page-dots .dot, .c-slider .flickity-button, .c-nav .c-nav__link:after, a {
   transition: all 300ms;
 }
 
@@ -318,6 +318,41 @@ Header
 }
 .c-nav .c-nav__link:hover:after, .c-nav .c-nav__link:focus:after, .c-nav .c-nav__link.active:after {
   transform: translateX(-50%) scale(1);
+}
+
+/*-------------------------------------------------------------------
+Slider
+-------------------------------------------------------------------*/
+.c-slider {
+  margin: 0 auto;
+  width: 80%;
+}
+.c-slider .flickity-slider {
+  display: flex;
+  align-items: stretch;
+}
+.c-slider .flickity-button {
+  width: 30px;
+  height: 30px;
+  background: #D9D9D9;
+}
+.c-slider .flickity-button:hover, .c-slider .flickity-button:focus {
+  background: #A30A0A;
+}
+.c-slider .flickity-button.previous {
+  left: -50px;
+}
+.c-slider .flickity-button.next {
+  right: -50px;
+}
+.c-slider .flickity-page-dots .dot {
+  background: #909090;
+  width: 11px;
+  height: 11px;
+  opacity: 1;
+}
+.c-slider .flickity-page-dots .dot:hover, .c-slider .flickity-page-dots .dot:focus, .c-slider .flickity-page-dots .dot.is-selected {
+  background: #A30A0A;
 }
 
 /*-------------------------------------------------------------------
@@ -602,6 +637,30 @@ Sections
 }
 .c-benefit .c-benefit__text {
   margin-top: 15px;
+}
+
+/*Section Depoimentos*/
+.c-testimonial {
+  padding: 30px;
+  min-height: 240px;
+  background: linear-gradient(0deg, rgba(33, 33, 33, 0.89), rgba(33, 33, 33, 0.89)), url(/wp-content/themes/eos-dev/dist/img/glass-effect.webp) center center repeat;
+  background-size: cover !important;
+  text-align: start !important;
+  text-align-last: start !important;
+  border-bottom: 2px solid #353535;
+}
+.c-testimonial .c-testimonial__info {
+  justify-content: start;
+}
+.c-testimonial .c-testimonial__info img {
+  margin-right: 10px;
+  border-radius: 50%;
+}
+.c-testimonial .c-testimonial__info .c-testimonial__ocupation {
+  color: #909090;
+}
+.c-testimonial .c-testimonial__text {
+  margin-top: 10px;
 }
 
 /*Section Contato */

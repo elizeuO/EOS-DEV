@@ -190,6 +190,44 @@ function renderServiceBenefits()
     <?php }
 }
 
+function renderTestimonials()
+{
+    $query = new \WP_Query(['post_type' => 'depoimento', 'order' => 'asc', 'orderby' => 'name', 'post_status' => 'publish', 'posts_per_page' => -1]);
+    $posts = $query->posts;
+
+    foreach ($posts as $key => $post) {
+        $fields = get_fields($post->ID);
+        ?>
+
+        <article class="l__col-4 l__col--less-padding">
+
+            <div class="c-testimonial">
+
+                <div class="c-testimonial__info l-flex l-flex--center">
+
+                    <img src="<?= get_the_post_thumbnail_url($post) ?>">
+
+                    <div>
+                        <h3>
+                            <?= $post->post_title ?>
+                        </h3>
+
+                        <span class="c-testimonial__ocupation">
+                            <?= $fields['depoimento_ocupacao'] ?>
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="c-testimonial__text">
+                    <?= $fields['depoimento_texto'] ?>
+                </div>
+
+            </div>
+        </article>
+    <?php }
+}
+
 
 function getSiteInfo($info, $is_link = false)
 {
