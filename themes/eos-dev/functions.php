@@ -162,6 +162,36 @@ function renderSkills()
     <?php }
 }
 
+function renderServices()
+{
+    $query = new \WP_Query(['post_type' => 'servico', 'order' => 'asc', 'orderby' => 'name', 'post_status' => 'publish', 'posts_per_page' => -1]);
+    $posts = $query->posts;
+
+    foreach ($posts as $key => $post) {
+        $fields = get_fields($post->ID);
+        ?>
+        <div class="c-service js-accordion <?= $key == 0 ? 'active' : '' ?>">
+            <div class="c-service__header l-flex l-flex--center l-flex--spread">
+
+                <div class="c-service__title l-flex l-flex--center">
+                    <img src="<?= get_the_post_thumbnail_url($post) ?>">
+
+                    <h3>
+                        <?= $post->post_title ?>
+                    </h3>
+                </div>
+            </div>
+
+            <div class="c-service__content">
+                <div>
+                    <?= $fields['servico_texto'] ?>
+                </div>
+            </div>
+        </div>
+        <?php
+    }
+}
+
 
 function renderServiceBenefits()
 {

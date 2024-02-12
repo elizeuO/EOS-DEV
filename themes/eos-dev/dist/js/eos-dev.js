@@ -164,3 +164,25 @@ function handleHorizontalScroll() {
     });
   });
 }
+
+//Handle accordions
+document.addEventListener('click', (ev)=>{
+  const accordion = ev.target.closest('.js-accordion');
+  if(null === accordion){return;}
+
+  closeOthersAccordions(accordion);
+  accordion.classList.toggle('active');
+});
+
+function closeOthersAccordions(currentAccordion){
+  const accordions = document.querySelectorAll('.js-accordion.active');
+  if(null === accordions){return;}
+
+  
+  accordions.forEach((accordion)=>{
+
+    if(accordion !== currentAccordion){
+      accordion.classList.remove('active');
+    }
+  });
+}

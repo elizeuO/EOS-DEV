@@ -73,7 +73,7 @@ Transition
 -------------------------------------------------------------------*/
 input,
 select,
-textarea, .c-contact-info li i, .c-tabs .c-tab__nav .c-tab__nav-link, .c-slider .flickity-page-dots .dot, .c-slider .flickity-button, .c-nav .c-nav__link:after, a {
+textarea, .c-contact-info li i, .c-service .c-service__header .c-service__title img, .c-service .c-service__header, .c-tabs .c-tab__nav .c-tab__nav-link, .c-slider .flickity-page-dots .dot, .c-slider .flickity-button, .c-nav .c-nav__link:after, a {
   transition: all 300ms;
 }
 
@@ -335,6 +335,7 @@ Slider
   width: 30px;
   height: 30px;
   background: #D9D9D9;
+  outline: none !important;
 }
 .c-slider .flickity-button:hover, .c-slider .flickity-button:focus {
   background: #A30A0A;
@@ -344,6 +345,9 @@ Slider
 }
 .c-slider .flickity-button.next {
   right: -50px;
+}
+.c-slider .flickity-button .flickity-button-icon {
+  fill: #111111;
 }
 .c-slider .flickity-page-dots .dot {
   background: #909090;
@@ -615,6 +619,52 @@ Sections
 }
 .c-flipbox:hover .c-flipbox__holder {
   transform: rotateY(180deg);
+}
+
+/*Serviços */
+.c-service {
+  cursor: pointer;
+}
+.c-service:not(:last-child) {
+  margin-bottom: 5px;
+}
+.c-service .c-service__header {
+  padding: 10px 20px;
+  background: linear-gradient(0deg, rgba(33, 33, 33, 0.7), rgba(33, 33, 33, 0.7)), url(/wp-content/themes/eos-dev/dist/img/glass-effect.webp) center center repeat;
+  background-size: cover !important;
+}
+.c-service .c-service__header .c-service__title img {
+  margin-right: 10px;
+  filter: brightness(0) invert(1);
+}
+.c-service .c-service__header:after {
+  content: "+";
+  font-size: 20px;
+}
+.c-service .c-service__content {
+  display: grid;
+  grid-template-rows: 0fr;
+  background: #212121;
+  text-align: start;
+  text-align-last: start;
+  transition: grid-template-rows 300ms;
+}
+.c-service .c-service__content div {
+  overflow: hidden;
+}
+.c-service.active .c-service__header {
+  background: linear-gradient(0deg, rgba(33, 33, 33, 0), rgba(33, 33, 33, 0)), url(/wp-content/themes/eos-dev/dist/img/glass-effect.webp) center center repeat;
+}
+.c-service.active .c-service__header:after {
+  content: "-";
+}
+.c-service.active .c-service__header .c-service__title img {
+  filter: none;
+}
+.c-service.active .c-service__content {
+  grid-template-rows: 1fr;
+  padding: 20px;
+  margin-top: 5px;
 }
 
 /*Section Benefícios dos serviços */
