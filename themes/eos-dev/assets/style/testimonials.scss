@@ -1,0 +1,26 @@
+.c-testimonial {
+    padding: 30px;
+    min-height: 240px;
+    background: linear-gradient(0deg, rgba(33, 33, 33, 0.89), rgba(33, 33, 33, 0.89)), url(/wp-content/themes/eos-dev/dist/img/glass-effect.webp) center center repeat;
+    background-size: cover !important;
+    text-align: start !important;
+    text-align-last: start !important;
+    border-bottom: 2px solid $colorMediumGray;
+
+    .c-testimonial__info {
+        justify-content: start;
+
+        img {
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .c-testimonial__ocupation {
+            color: $colorGray;
+        }
+    }
+
+    .c-testimonial__text {
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,117 @@
+.c-tabs {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+
+    .c-tab__nav {
+        width: 20%;
+        background: $colorBlack;
+
+        .c-tab__nav-link {
+            position: relative;
+            padding: 10px;
+            width: 100%;
+            font-size: 20px;
+            font-weight: 600;
+            opacity: .8;
+            cursor: pointer;
+            @extend %transition;
+
+            &:hover,
+            &:focus,
+            &.active {
+                opacity: 1;
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 3px;
+                height: 100%;
+                background: $colorRed;
+                transform: scale(1, 0);
+                transform-origin: top;
+                opacity: 0;
+                transition: 600ms;
+            }
+
+            &.active {
+                &:before {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .c-tab__content-wrapper {
+        padding: 30px 20px;
+        width: 80%;
+        background: linear-gradient(0deg, rgba(33, 33, 33, .85), rgba(33, 33, 33, .85)), url('/wp-content/themes/eos-dev/dist/img/glass-effect.webp') center center repeat;
+        background-size: cover;
+        border: 1px solid $colorMediumGray;
+
+        .c-tab__content {
+            height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(-20%);
+            transition: all 600ms;
+
+            &.active {
+                height: auto;
+                opacity: 1;
+                overflow: visible;
+                transform: none;
+            }
+
+            &.active,
+            &.active .l-flex {
+                min-height: 220px;
+            }
+
+            .c-experience-period {
+                margin-top: 5px;
+                color: $colorGray;
+                font-weight: 600;
+                font-size: 14px;
+            }
+
+            .c-tab__content-text {
+                margin-top: 20px;
+                padding-right: 20px;
+                max-height: 120px;
+                text-align: left;
+                text-align-last: left;
+                overflow: auto;
+
+                @extend %styledScroll;
+
+                &::-webkit-scrollbar {
+                    width: 4px;
+                }
+
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style-type: none;
+
+                    li {
+                        margin-bottom: 5px;
+
+                        &:before {
+                            content: '+';
+                            margin-right: 5px;
+                            color: $colorLightRed;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

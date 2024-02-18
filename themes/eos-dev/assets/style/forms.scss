@@ -1,0 +1,32 @@
+input,
+select,
+textarea {
+    padding: 15px 12px;
+    width: 100%;
+    color: white;
+    background: $colorGrafitti !important;
+    border: 1px solid $colorDarkGray;
+    @extend %transition;
+
+    &:focus {
+        border-color: $colorGray;
+        border-left: 5px solid $colorRed;
+    }
+
+    &::placeholder {
+        color: white;
+    }
+}
+
+.wpcf7 p {
+    margin: 0 !important;
+}
+
+.wpcf7-response-output {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.wpcf7-not-valid-tip {
+    margin-top: 10px;
+}

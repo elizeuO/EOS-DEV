@@ -1,0 +1,88 @@
+.c-skills {
+    display: grid;
+    padding-bottom: 15px;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(2, 1fr);
+    gap: $colGap;
+    grid-auto-columns: 20%;
+    grid-auto-flow: column;
+    overflow-y: hidden;
+    overflow-x: auto;
+
+    @extend %styledScroll;
+
+    &::-webkit-scrollbar {
+        height: 5px;
+    }
+
+    .c-skill {
+
+        .c-flipbox__holder {
+            background: $colorGrafitti;
+        }
+
+        .c-flipbox__front-face {
+            background: linear-gradient(0deg, rgba(33, 33, 33, .8), rgba(33, 33, 33, .8)), url('/wp-content/themes/eos-dev/dist/img/glass-effect.webp') center center repeat;
+            background-size: cover;
+        }
+
+        .c-flipbox__back-face {
+            background: linear-gradient(0deg, rgba(33, 33, 33, .8), rgba(33, 33, 33, .8)), url('/wp-content/themes/eos-dev/dist/img/glass-effect.webp') center center repeat;
+            background-size: cover;
+        }
+
+        .c-skill__title {
+            margin-top: 5px;
+            font-size: 18px;
+            font-weight: 400;
+        }
+    }
+}
+
+.c-flipbox {
+    perspective: 1000px;
+    cursor: pointer;
+    height: 200px;
+
+    .c-flipbox__holder {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        transition: all 800ms;
+
+        .c-flipbox__back-face {
+            transform: rotateY(180deg);
+        }
+
+        .c-flipbox__front-face,
+        .c-flipbox__back-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            /* Safari */
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+        }
+
+        .c-flipbox__content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80%;
+            transform: translate(-50%, -50%) translateZ(35px);
+            z-index: 1;
+
+        }
+    }
+
+    &:hover {
+        .c-flipbox__holder {
+            transform: rotateY(180deg);
+        }
+    }
+
+}

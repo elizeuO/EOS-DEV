@@ -1,0 +1,48 @@
+.c-slider {
+    margin: 0 auto;
+    width: 80%;
+
+    .flickity-slider {
+        display: flex;
+        align-items: stretch;
+    }
+
+    .flickity-button {
+        width: 30px;
+        height: 30px;
+        background: $colorSilver;
+        outline: none !important;
+        @extend %transition;
+
+        &:hover,
+        &:focus {
+            background: $colorRed;
+        }
+
+        &.previous {
+            left: -50px;
+        }
+
+        &.next {
+            right: -50px;
+        }
+
+        .flickity-button-icon {
+            fill: $colorBlack;
+        }
+    }
+
+    .flickity-page-dots .dot {
+        background: $colorGray;
+        width: 11px;
+        height: 11px;
+        @extend %transition;
+        opacity: 1;
+
+        &:hover,
+        &:focus,
+        &.is-selected {
+            background: $colorRed;
+        }
+    }
+}

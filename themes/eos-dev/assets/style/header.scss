@@ -1,0 +1,40 @@
+.c-header {
+    position: fixed;
+    width: 100%;
+    padding: 20px;
+    background: $colorBlack;
+    box-shadow: rgba(0, 0, 0, .35) 0 0 4px 0;
+    z-index: 10;
+}
+
+.c-nav {
+    .c-nav__link {
+        position: relative;
+        padding: 12px 20px;
+        opacity: .8;
+
+        &:after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            width: 80%;
+            height: 2px;
+            background: $colorRed;
+            transform: translateX(-50%) scale(0);
+            transform-origin: center;
+            @extend %transition;
+        }
+
+        &:hover,
+        &:focus,
+        &.active {
+            opacity: 1;
+
+            &:after {
+                transform: translateX(-50%) scale(1);
+            }
+        }
+    }
+}

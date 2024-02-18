@@ -1,0 +1,270 @@
+/*-------------------------------------------------------------------
+Colors
+-------------------------------------------------------------------*/
+$colorBlack: #111111;
+$colorGrafitti: #212121;
+$colorGray: #909090;
+$colorDarkGray: #2F2F2F;
+$colorMediumGray: #353535;
+$colorLightGray: #EEEEEE;
+$colorSilver: #D9D9D9;
+$colorRed: #A30A0A;
+$colorLightRed: #BB0000;
+
+/*-------------------------------------------------------------------
+Typography
+-------------------------------------------------------------------*/
+$textSizecontent: 16px;
+$textSizeH1: 40px;
+$TextSizeHero: 55px;
+$textSizeH2: 32px;
+
+$textFontContent: 'Roboto',
+sans-serif;
+
+@font-face {
+    font-family: 'Fa Brands';
+    src: url('/wp-content/themes/eos-dev/dist/fonts/fa-brands-400.ttf');
+}
+
+@font-face {
+    font-family: 'Fa Solid';
+    src: url('/wp-content/themes/eos-dev/dist/fonts/fa-solid-900.ttf');
+}
+
+.fa-brands,
+.fab {
+    font-family: 'Fa Brands' !important;
+}
+
+.fa-solid {
+    font-family: 'Fa Solid' !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h5 {
+    margin: 0;
+}
+
+h1 {
+    font-size: $textSizeH1;
+}
+
+h2 {
+    font-size: $textSizeH2;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 15px;
+    line-height: 22px;
+}
+
+b {
+    font-weight: 600;
+}
+
+.c__title {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 30px;
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 100%;
+        height: 3px;
+        background: $colorRed;
+    }
+}
+
+.c__highlight-text {
+    color: $colorLightRed;
+}
+
+/*-------------------------------------------------------------------
+Transition
+-------------------------------------------------------------------*/
+%transition {
+    transition: all 300ms;
+}
+
+/*-------------------------------------------------------------------
+Flex
+-------------------------------------------------------------------*/
+$colGap: 12px;
+$colLessGap: 6px;
+
+.l-flex {
+    display: flex;
+}
+
+.l-flex--center {
+    justify-content: center;
+    align-items: center;
+}
+
+.l-flex--stretch {
+    align-items: stretch;
+}
+
+.l-flex--wrap {
+    flex-wrap: wrap;
+}
+
+.l-flex--negative {
+    margin-left: -$colGap;
+    margin-right: -$colGap;
+}
+
+.l-flex--negative-less {
+    margin-left: -$colLessGap;
+    margin-right: -$colLessGap;
+}
+
+.l-flex--vertical {
+    flex-direction: column;
+}
+
+.l-flex--spread {
+    justify-content: space-between;
+}
+
+%flexPadding {
+    padding: $colGap;
+}
+
+%flexLessPadding {
+    padding: $colLessGap;
+}
+
+.l__col-2-4 {
+    @extend %flexPadding;
+    width: 20%;
+}
+
+.l__col-3 {
+    @extend %flexPadding;
+    width: 25%;
+}
+
+.l__col-4 {
+    @extend %flexPadding;
+    width: 33.33%;
+}
+
+.l__col-6 {
+    @extend %flexPadding;
+    width: 50%;
+}
+
+.l__col-8 {
+    @extend %flexPadding;
+    width: 66.66%;
+}
+
+.l__col-9 {
+    @extend %flexPadding;
+    width: 75%;
+}
+
+.l__col-12 {
+    @extend %flexPadding;
+    width: 100%;
+}
+
+.l__col--less-padding {
+    @extend %flexLessPadding;
+}
+
+/*-------------------------------------------------------------------
+General
+-------------------------------------------------------------------*/
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    background: $colorBlack;
+    color: white;
+    font-size: $textSizecontent;
+    font-family: $textFontContent;
+}
+
+:focus {
+    outline: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.c__center {
+    text-align: center;
+    text-align-last: center;
+}
+
+.c__full-height {
+    height: 100%;
+}
+
+a {
+    @extend %transition;
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.c__container {
+    margin: 0 auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    max-width: 1240px;
+}
+
+.c__logo {
+
+    &:hover,
+    &:focus {
+        filter: brightness(1.3);
+    }
+}
+
+/*-------------------------------------------------------------------
+Scroll
+-------------------------------------------------------------------*/
+%styledScroll {
+
+
+    &::-webkit-scrollbar-track {
+        background: $colorGrafitti;
+    }
+
+    .c-section--grafitti &::-webkit-scrollbar-track {
+        background: $colorBlack;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $colorRed;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: $colorLightRed;
+    }
+}

@@ -1,0 +1,68 @@
+.c__button {
+    position: relative;
+    padding: 10px 15px;
+    background: $colorRed;
+    color: white;
+    text-transform: uppercase;
+    overflow: hidden;
+    border: none;
+    outline: none !important;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        animation: button-highlight 1s infinite;
+    }
+
+    @keyframes button-highlight {
+        from {
+            background: $colorRed;
+        }
+
+        50% {
+            background: $colorLightRed;
+        }
+
+        to {
+            background: $colorRed;
+        }
+    }
+
+    &.c__button--gray {
+        background: $colorGray;
+
+        &:hover,
+        &:focus {
+            animation: button-highlight-gray 1s infinite;
+        }
+
+        @keyframes button-highlight-gray {
+            from {
+                filter: brightness(.8);
+            }
+
+            50% {
+                filter: brightness(1);
+            }
+
+            to {
+                filter: brightness(.8);
+            }
+        }
+    }
+
+    &:after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-color: white;
+        border-width: 4px;
+        border-style: solid;
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+    }
+}

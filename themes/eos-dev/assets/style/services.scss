@@ -1,0 +1,63 @@
+.c-service {
+    cursor: pointer;
+
+    &:not(:last-child) {
+        margin-bottom: 5px;
+    }
+
+    .c-service__header {
+        padding: 10px 20px;
+        background: linear-gradient(0deg, rgba(33, 33, 33, 0.7), rgba(33, 33, 33, 0.7)), url(/wp-content/themes/eos-dev/dist/img/glass-effect.webp) center center repeat;
+        background-size: cover !important;
+        @extend %transition;
+
+        .c-service__title {
+            img {
+                margin-right: 10px;
+                filter: brightness(0) invert(1);
+                @extend %transition;
+            }
+        }
+
+        &:after {
+            content: '+';
+            font-size: 20px;
+        }
+    }
+
+    .c-service__content {
+        display: grid;
+        grid-template-rows: 0fr;
+        background: $colorGrafitti;
+        text-align: start;
+        text-align-last: start;
+        transition: grid-template-rows 300ms;
+
+        div {
+            overflow: hidden;
+        }
+    }
+
+    &.active {
+        .c-service__header {
+            background: linear-gradient(0deg, rgba(33, 33, 33, 0), rgba(33, 33, 33, 0)), url(/wp-content/themes/eos-dev/dist/img/glass-effect.webp) center center repeat;
+
+            &:after {
+                content: '-'
+            }
+
+            .c-service__title {
+                img {
+                    filter: none;
+                }
+            }
+        }
+
+        .c-service__content {
+            grid-template-rows: 1fr;
+            padding: 20px;
+            margin-top: 5px;
+
+        }
+    }
+}

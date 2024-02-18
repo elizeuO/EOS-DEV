@@ -1,0 +1,130 @@
+.c-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    &.c-section--hero {
+        position: relative;
+        margin-top: 60px;
+        height: calc(100vh - 60px);
+        background: linear-gradient(0deg, rgba(0, 0, 0, .22), rgba(0, 0, 0, .8)), url('/wp-content/themes/eos-dev/dist/img/hero-banner.webp') center center repeat;
+        background-size: cover;
+
+        h1 {
+            font-size: $TextSizeHero;
+            font-weight: 300;
+        }
+
+        .c-section--hero__content {
+            position: absolute;
+            width: 80%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .c-section--hero__typed-text {
+            display: block;
+            color: $colorLightRed;
+            font-weight: 600;
+
+            .ti-cursor {
+                color: rgba(255, 255, 255, .4) !important;
+                font-weight: 300 !important;
+            }
+        }
+
+        .c-section--hero__mouse-icon {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            animation: mouse 1.2s infinite;
+            transform: translateX(-50%);
+        }
+
+        @keyframes mouse {
+            from {
+                bottom: 35px;
+                opacity: .4;
+            }
+
+            to {
+                bottom: 20px;
+                opacity: .8;
+            }
+        }
+    }
+
+    &.c-section--grafitti {
+        background: $colorGrafitti;
+    }
+
+    &.c-section--less-padding {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+//Section About
+.c-intro {
+    .c-intro__photo {
+        margin-right: 20px;
+    }
+
+    span {
+        color: $colorSilver;
+        font-size: 20px;
+    }
+}
+
+.c-about {
+    padding-left: 30px;
+    border-left: 1px solid $colorMediumGray;
+
+    p {
+        max-width: 80%;
+    }
+
+    .c__button {
+        &:not(:first-of-type) {
+            margin-left: 5px;
+        }
+    }
+}
+
+.l-flex article:last-child .c-counter {
+    border-right: none;
+}
+
+/*Section Contato */
+.c-contact-info-column {
+    padding-left: 40px;
+}
+
+.c-contact-info {
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+
+        i {
+            margin-right: 5px;
+            font-size: 18px;
+            @extend %transition;
+        }
+
+        a {
+
+            &:hover,
+            &:focus {
+                i {
+                    color: $colorRed;
+                }
+            }
+        }
+    }
+}
